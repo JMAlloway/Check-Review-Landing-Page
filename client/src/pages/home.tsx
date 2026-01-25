@@ -125,18 +125,34 @@ export default function Home() {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
-    // Simulate API call
-    setTimeout(() => {
-      localStorage.setItem("demoRequest", JSON.stringify(values));
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+  try {
+    const response = await fetch('https://formspree.io/f/xvzknjvw', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(values)
+    });
+    if (response.ok) {
       toast({
         title: "Request Received",
         description: "We'll be in touch shortly to schedule your demo.",
       });
       form.reset();
-    }, 1000);
+    } else {
+      toast({
+        title: "Something went wrong",
+        description: "Please try again or email us directly.",
+        variant: "destructive",
+      });
+    }
+  } catch (error) {
+    toast({
+      title: "Something went wrong",
+      description: "Please try again or email us directly.",
+      variant: "destructive",
+    });
   }
+}
 
   const scrollToDemo = () => {
     const element = document.getElementById("demo-form");
