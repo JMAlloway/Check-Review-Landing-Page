@@ -232,10 +232,6 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/20 border border-secondary/30 text-secondary-foreground text-sm font-medium mb-6 backdrop-blur-sm">
-              <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-              Built for Community Banks
-            </div>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-display tracking-tight mb-6 leading-tight text-white">
               Check Review That <br className="hidden md:block" />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-gray-400">
@@ -362,7 +358,6 @@ export default function Home() {
               
               <div className="space-y-4">
                 {[
-                  "SOC 2 Type II (in progress)",
                   "FFIEC-aligned controls",
                   "BSA/AML workflow support",
                   "Multi-tenant isolation"
