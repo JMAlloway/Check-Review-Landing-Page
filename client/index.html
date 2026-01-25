@@ -24,11 +24,65 @@
     <meta name="twitter:title" content="CheckGuard | Automated Check Review" />
     <meta name="twitter:description" content="Stop drowning in manual check reviews. CheckGuard gives your ops team the speed of automation with the control regulators demand." />
     <meta name="twitter:image" content="/opengraph.png" />
-    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href="https://getcheckguard.com/" />
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://getcheckguard.com/#organization",
+          "name": "CheckGuard",
+          "url": "https://getcheckguard.com",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://getcheckguard.com/favicon.svg"
+          },
+          "description": "Automated check review software for community banks"
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://getcheckguard.com/#website",
+          "url": "https://getcheckguard.com",
+          "name": "CheckGuard",
+          "publisher": {
+            "@id": "https://getcheckguard.com/#organization"
+          }
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://getcheckguard.com/#webpage",
+          "url": "https://getcheckguard.com/",
+          "name": "CheckGuard | Automated Check Review for Community Banks",
+          "description": "Stop drowning in manual check reviews. CheckGuard gives your ops team the speed of automation with the control regulators demand.",
+          "isPartOf": {
+            "@id": "https://getcheckguard.com/#website"
+          },
+          "about": {
+            "@id": "https://getcheckguard.com/#organization"
+          }
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "CheckGuard",
+          "applicationCategory": "BusinessApplication",
+          "operatingSystem": "Web",
+          "description": "Human-in-the-loop check review console built specifically for community banks",
+          "offers": {
+            "@type": "Offer",
+            "availability": "https://schema.org/OnlineOnly"
+          }
+        }
+      ]
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>
