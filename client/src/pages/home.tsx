@@ -14,7 +14,10 @@ import {
   CheckCircle2,
   Menu,
   X,
-  Lock
+  Lock,
+  Network,
+  ScanLine,
+  AlertTriangle
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -38,6 +41,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CheckPattern } from "@/components/ui/check-pattern";
 import { useToast } from "@/hooks/use-toast";
 import heroBg from "@/assets/hero-bg.png";
+import dashboardImg from "@/assets/dashboard-screenshot.png";
 
 const formSchema = z.object({
   fullName: z.string().min(2, "Name is required"),
@@ -50,34 +54,34 @@ const formSchema = z.object({
 
 const features = [
   {
-    icon: Search,
-    title: "Bank-Grade Image Viewer",
-    description: "Zoom, pan, magnifier, brightness controls. See what you need to see clearly."
+    icon: ScanLine,
+    title: "Smart Detection Zones",
+    description: "Auto-identifies amount, signature, and MICR lines. Bounding boxes highlight anomalies instantly."
+  },
+  {
+    icon: Network,
+    title: "Network Intelligence",
+    description: "Real-time payee hash matching against known fraud patterns. See matches from other institutions."
   },
   {
     icon: History,
     title: "Side-by-Side Comparison",
-    description: "Compare against historical checks from the same account instantly to spot fraud."
+    description: "Split-screen view with historical checks. Spot signature variances at a glance."
   },
   {
     icon: Users,
     title: "Dual Control Workflows",
-    description: "Configurable thresholds for two-person approval. Your policy, enforced automatically."
+    description: "Enforce second approvals for high-value or high-risk items. Configurable thresholds."
   },
   {
     icon: FileText,
-    title: "Full Audit Trail",
-    description: "Every action logged, timestamped, immutable. Evidence-sealed for examiner requests."
-  },
-  {
-    icon: ShieldCheck,
-    title: "Explainable Detection Rules",
-    description: "When something's flagged, your team knows exactly why. No black box AI."
+    title: "Rich Context Data",
+    description: "See account tenure, average balance, and deviation from normal check behavior right in the console."
   },
   {
     icon: Server,
-    title: "Works With Your Core",
-    description: "Flat file imports, SFTP, or API. We adapt to your infrastructure seamlessly."
+    title: "Core Integration",
+    description: "Works with your existing core. Flat file, SFTP, or API support for seamless data flow."
   }
 ];
 
@@ -290,19 +294,57 @@ export default function Home() {
       </section>
 
       {/* Solution Section */}
-      <section className="py-20 bg-white border-y border-border/40">
-        <div className="container mx-auto px-4 max-w-4xl text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+      <section className="py-20 bg-white border-y border-border/40 overflow-hidden">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center mb-12">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6 font-display">
+                Automation with Oversight
+              </h2>
+              <p className="text-xl text-muted-foreground leading-relaxed">
+                CheckGuard is a <span className="text-secondary font-semibold">human-in-the-loop</span> check review console built specifically for community banks. Your team makes every decision—we just make those decisions faster, more consistent, and audit-ready.
+              </p>
+            </motion.div>
+          </div>
+
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
+            className="relative max-w-6xl mx-auto"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6 font-display">
-              Automation with Oversight
-            </h2>
-            <p className="text-xl text-muted-foreground leading-relaxed">
-              CheckGuard is a <span className="text-secondary font-semibold">human-in-the-loop</span> check review console built specifically for community banks. Your team makes every decision—we just make those decisions faster, more consistent, and audit-ready.
-            </p>
+            <div className="absolute inset-0 bg-secondary/10 transform scale-105 rounded-xl blur-2xl" />
+            <div className="relative rounded-xl border border-border shadow-2xl overflow-hidden bg-background">
+              <img 
+                src={dashboardImg} 
+                alt="CheckGuard Dashboard showing side-by-side check comparison and network intelligence" 
+                className="w-full h-auto"
+              />
+              <div className="absolute inset-0 ring-1 ring-inset ring-black/10 rounded-xl" />
+            </div>
+            
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8 text-center">
+              <div className="p-4 bg-background rounded-lg border border-border/50 shadow-sm">
+                <div className="font-bold text-2xl text-primary mb-1">2.4s</div>
+                <div className="text-sm text-muted-foreground">Avg Review Time</div>
+              </div>
+              <div className="p-4 bg-background rounded-lg border border-border/50 shadow-sm">
+                <div className="font-bold text-2xl text-secondary mb-1">100%</div>
+                <div className="text-sm text-muted-foreground">Audit Trail</div>
+              </div>
+              <div className="p-4 bg-background rounded-lg border border-border/50 shadow-sm">
+                <div className="font-bold text-2xl text-primary mb-1">24/7</div>
+                <div className="text-sm text-muted-foreground">Availability</div>
+              </div>
+              <div className="p-4 bg-background rounded-lg border border-border/50 shadow-sm">
+                <div className="font-bold text-2xl text-secondary mb-1">SOC 2</div>
+                <div className="text-sm text-muted-foreground">Ready</div>
+              </div>
+            </div>
           </motion.div>
         </div>
       </section>
