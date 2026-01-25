@@ -1,5 +1,12 @@
 import { useEffect } from "react";
 
+// Declare gtag for TypeScript
+declare global {
+  interface Window {
+    gtag?: (...args: unknown[]) => void;
+  }
+}
+
 interface SEOProps {
   title: string;
   description: string;
@@ -10,6 +17,15 @@ export function SEO({ title, description, canonical }: SEOProps) {
   useEffect(() => {
     // Update document title
     document.title = title;
+
+    // Send page view to Google Analytics
+    if (window.gtag) {
+      window.gtag("event", "page_view", {
+        page_title: title,
+        page_location: window.location.href,
+        page_path: window.location.pathname,
+      });
+    }
 
     // Update or create meta description
     let metaDescription = document.querySelector('meta[name="description"]');
