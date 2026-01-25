@@ -1,0 +1,64 @@
+Build a single-page React landing page for CheckGuard by ClearLedger Technologies, LLC (getcheckguard.com) - a check review SaaS platform for community banks.
+
+## Brand & Tone
+- Professional, trustworthy fintech aesthetic (think: Plaid, Treasury Prime, Unit)
+- Navy blue (#1e3a5f) and forest green (#2d5a3d) primary palette with white/light gray backgrounds
+- Clean, modern typography (Inter or similar)
+- Convey security, compliance, and operational efficiency
+- NO generic stock photo vibes - use abstract geometric patterns or subtle grid/ledger motifs
+
+## Hero Section
+Headline: "Check Review That Actually Works for Community Banks"
+Subhead: "Stop drowning in manual check reviews. CheckGuard gives your ops team the speed of automation with the control regulators demand."
+
+Include a "Request Demo" CTA button that scrolls to the form.
+
+## Pain Points Section (3 cards)
+1. "Inconsistent Decisions" - Different reviewers, different standards. Examiners notice.
+2. "No Audit Trail" - When regulators ask why you approved that check, can you show them?
+3. "Drowning in Volume" - Your team reviews hundreds of items daily with spreadsheets and gut feel.
+
+## Solution Section
+Brief paragraph: CheckGuard is a human-in-the-loop check review console built specifically for community banks. Your team makes every decision - we just make those decisions faster, more consistent, and audit-ready.
+
+## Features Grid (6 items with icons)
+1. Bank-Grade Image Viewer - Zoom, pan, magnifier, brightness controls. See what you need to see.
+2. Side-by-Side Comparison - Compare against historical checks from the same account instantly.
+3. Dual Control Workflows - Configurable thresholds for two-person approval. Your policy, enforced automatically.
+4. Full Audit Trail - Every action logged, timestamped, immutable. Evidence-sealed for examiner requests.
+5. Explainable Detection Rules - When something's flagged, your team knows exactly why.
+6. Works With Your Core - Flat file imports, SFTP, or API. We adapt to your infrastructure, not the other way around.
+
+## Trust Section
+- "Built for banks under $10B that can't afford enterprise pricing but can't afford examiner findings either."
+- Bullet points: SOC 2 Type II (in progress), FFIEC-aligned controls, BSA/AML workflow support, Multi-tenant isolation
+
+## Demo Request Form
+Header: "See CheckGuard in Action"
+Subtext: "30-minute demo tailored to your bank's workflow. No pressure, no 47-email sales sequence."
+
+Form fields:
+- Full Name (required)
+- Email (required, work email validation hint)
+- Bank Name (required)
+- Your Role (dropdown: COO/Operations, BSA/Compliance, IT/Technology, Executive Leadership, Other)
+- Approximate Asset Size (dropdown: Under $500M, $500M-$1B, $1B-$5B, $5B-$10B, Over $10B)
+- Current Pain Point (optional textarea, placeholder: "What's driving you to look at this?")
+- Submit button: "Request My Demo"
+
+On submit: Show success message, store to localStorage for now (note: will integrate with actual backend/webhook later)
+
+## Footer
+- © 2025 ClearLedger Technologies, LLC
+- Links (can be placeholder #): Privacy Policy | Terms of Service
+- Small text: "CheckGuard is not a replacement for your compliance program. All decisions remain with your qualified personnel."
+
+## Technical Requirements
+- Single React component with Tailwind CSS
+- Smooth scroll behavior for CTA buttons
+- Mobile responsive
+- Form validation with helpful error states
+- Subtle animations on scroll (fade-in sections)
+- Accessible (proper labels, focus states, color contrast)
+
+Do NOT include: pricing section, customer logos (we don't have any yet), chatbot widget, excessive animations, or anything that feels "startup-y" rather than "bank vendor-y"
