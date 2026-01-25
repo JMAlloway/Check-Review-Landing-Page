@@ -1,9 +1,15 @@
 import { Link } from "wouter";
 import { ArrowLeft } from "lucide-react";
+import { SEO } from "@/components/seo";
 
 export default function Privacy() {
   return (
     <div className="min-h-screen bg-gray-50">
+      <SEO
+        title="Privacy Policy | CheckGuard"
+        description="Learn how CheckGuard collects, uses, and protects your information. Our privacy policy explains our data practices for community banks using our check review services."
+        canonical="https://getcheckguard.com/privacy"
+      />
       <div className="container mx-auto px-4 py-12 max-w-4xl">
         <Link href="/" className="inline-flex items-center gap-2 text-primary hover:underline mb-8">
           <ArrowLeft className="h-4 w-4" />

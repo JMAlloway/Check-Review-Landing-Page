@@ -1,9 +1,15 @@
 import { Link } from "wouter";
 import { ArrowLeft } from "lucide-react";
+import { SEO } from "@/components/seo";
 
 export default function Terms() {
   return (
     <div className="min-h-screen bg-gray-50">
+      <SEO
+        title="Terms of Service | CheckGuard"
+        description="Read the terms and conditions for using CheckGuard's automated check review services. Understand your rights and responsibilities as a user."
+        canonical="https://getcheckguard.com/terms"
+      />
       <div className="container mx-auto px-4 py-12 max-w-4xl">
         <Link href="/" className="inline-flex items-center gap-2 text-primary hover:underline mb-8">
           <ArrowLeft className="h-4 w-4" />

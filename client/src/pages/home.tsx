@@ -3,13 +3,13 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { motion } from "framer-motion";
-import { 
-  ShieldCheck, 
-  Search, 
-  Users, 
-  FileText, 
-  History, 
-  Server, 
+import {
+  ShieldCheck,
+  Search,
+  Users,
+  FileText,
+  History,
+  Server,
   ArrowRight,
   CheckCircle2,
   Menu,
@@ -19,6 +19,7 @@ import {
   ScanLine,
   AlertTriangle
 } from "lucide-react";
+import { SEO } from "@/components/seo";
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -161,6 +162,11 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background font-sans text-foreground selection:bg-secondary/20 selection:text-secondary">
+      <SEO
+        title="CheckGuard | Automated Check Review for Community Banks"
+        description="Stop drowning in manual check reviews. CheckGuard gives your ops team the speed of automation with the control regulators demand."
+        canonical="https://getcheckguard.com/"
+      />
       {/* Navigation */}
       <nav 
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
