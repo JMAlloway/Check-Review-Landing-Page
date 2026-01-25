@@ -1,8 +1,8 @@
 # robots.txt for CheckGuard
-# https://checkguard.com
+# https://getcheckguard.com
 
 User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://checkguard.com/sitemap.xml
+Sitemap: https://getcheckguard.com/sitemap.xml
