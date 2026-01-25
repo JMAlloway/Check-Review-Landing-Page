@@ -337,12 +337,12 @@ export default function Home() {
                 <div className="text-sm text-muted-foreground">Audit Trail</div>
               </div>
               <div className="p-4 bg-background rounded-lg border border-border/50 shadow-sm">
-                <div className="font-bold text-2xl text-primary mb-1">98%</div>
-                <div className="text-sm text-muted-foreground">Auto-Decision</div>
+                <div className="font-bold text-2xl text-primary mb-1">Any Core</div>
+                <div className="text-sm text-muted-foreground">Integration</div>
               </div>
               <div className="p-4 bg-background rounded-lg border border-border/50 shadow-sm">
-                <div className="font-bold text-2xl text-secondary mb-1">&lt; 48h</div>
-                <div className="text-sm text-muted-foreground">Implementation</div>
+                <div className="font-bold text-2xl text-secondary mb-1">Secure</div>
+                <div className="text-sm text-muted-foreground">Architecture</div>
               </div>
             </div>
           </motion.div>
