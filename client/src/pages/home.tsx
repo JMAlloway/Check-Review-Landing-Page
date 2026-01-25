@@ -327,7 +327,7 @@ export default function Home() {
               <div className="absolute inset-0 ring-1 ring-inset ring-black/10 rounded-xl" />
             </div>
             
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8 text-center">
+            <div className="grid grid-cols-2 md:grid-cols-2 gap-4 mt-8 text-center max-w-2xl mx-auto">
               <div className="p-4 bg-background rounded-lg border border-border/50 shadow-sm">
                 <div className="font-bold text-2xl text-primary mb-1">2.4s</div>
                 <div className="text-sm text-muted-foreground">Avg Review Time</div>
@@ -335,14 +335,6 @@ export default function Home() {
               <div className="p-4 bg-background rounded-lg border border-border/50 shadow-sm">
                 <div className="font-bold text-2xl text-secondary mb-1">100%</div>
                 <div className="text-sm text-muted-foreground">Audit Trail</div>
-              </div>
-              <div className="p-4 bg-background rounded-lg border border-border/50 shadow-sm">
-                <div className="font-bold text-2xl text-primary mb-1">24/7</div>
-                <div className="text-sm text-muted-foreground">Availability</div>
-              </div>
-              <div className="p-4 bg-background rounded-lg border border-border/50 shadow-sm">
-                <div className="font-bold text-2xl text-secondary mb-1">SOC 2</div>
-                <div className="text-sm text-muted-foreground">Ready</div>
               </div>
             </div>
           </motion.div>
