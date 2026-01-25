@@ -395,7 +395,7 @@ export default function Home() {
                 <span className="text-gray-300">Community Bank Scale</span>
               </h2>
               <p className="text-lg text-gray-300 mb-8 leading-relaxed">
-                Built for banks under $10B that can't afford enterprise pricing but can't afford examiner findings either. We understand the regulatory pressure you face.
+                Built for community banks under $10B that demand enterprise-grade compliance. We deliver the rigorous controls regulators expect, right-sized for your operations.
               </p>
               
               <div className="space-y-4">
