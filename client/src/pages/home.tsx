@@ -135,8 +135,8 @@ export default function Home() {
     });
     if (response.ok) {
       toast({
-        title: "Request Received",
-        description: "We'll be in touch shortly to schedule your demo.",
+        title: "Application Received",
+        description: "We'll be in touch shortly to discuss the pilot program.",
       });
       form.reset();
     } else {
@@ -155,16 +155,16 @@ export default function Home() {
   }
 }
 
-  const scrollToDemo = () => {
-    const element = document.getElementById("demo-form");
+  const scrollToPilot = () => {
+    const element = document.getElementById("pilot-form");
     element?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
     <div className="min-h-screen bg-background font-sans text-foreground selection:bg-secondary/20 selection:text-secondary">
       <SEO
-        title="CheckGuard | Automated Check Review for Community Banks"
-        description="Stop drowning in manual check reviews. CheckGuard gives your ops team the speed of automation with the control regulators demand."
+        title="CheckGuard | Join the Pilot Program for Community Banks"
+        description="Shape the future of check review. Join our pilot program and get direct input on the automation platform your ops team deserves."
         canonical="https://getcheckguard.com/"
       />
       {/* Navigation */}
@@ -190,12 +190,12 @@ export default function Home() {
             <button onClick={() => document.getElementById("trust")?.scrollIntoView({ behavior: 'smooth'})} className={`text-sm font-medium hover:text-secondary transition-colors ${scrolled ? "text-foreground" : "text-white/90"}`}>
               Compliance
             </button>
-            <Button 
-              onClick={scrollToDemo}
+            <Button
+              onClick={scrollToPilot}
               variant={scrolled ? "default" : "secondary"}
               className={scrolled ? "bg-primary text-white hover:bg-primary/90" : "bg-white text-primary hover:bg-white/90"}
             >
-              Request Demo
+              Join the Pilot
             </Button>
           </div>
 
@@ -232,8 +232,8 @@ export default function Home() {
             >
               Compliance
             </button>
-            <Button onClick={() => { scrollToDemo(); setMobileMenuOpen(false); }} className="w-full">
-              Request Demo
+            <Button onClick={() => { scrollToPilot(); setMobileMenuOpen(false); }} className="w-full">
+              Join the Pilot
             </Button>
           </div>
         )}
@@ -259,28 +259,29 @@ export default function Home() {
             transition={{ duration: 0.6 }}
           >
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-display tracking-tight mb-6 leading-tight text-white">
-              Check Review That <br className="hidden md:block" />
+              Shape the Future of <br className="hidden md:block" />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-gray-400">
-                Actually Works
+                Check Review
               </span>
             </h1>
             <p className="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed">
-              Stop drowning in manual check reviews. CheckGuard gives your ops team the speed of automation with the control regulators demand.
+              Join a select group of community banks piloting the next generation of check review technology. Direct input. Priority support. The tools your ops team deserves.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button 
-                onClick={scrollToDemo}
-                size="lg" 
+              <Button
+                onClick={scrollToPilot}
+                size="lg"
                 className="bg-secondary hover:bg-secondary/90 text-white min-w-[200px] h-12 text-base shadow-lg shadow-secondary/20 transition-all hover:-translate-y-1"
               >
-                Request Demo <ArrowRight className="ml-2 w-4 h-4" />
+                Join the Pilot <ArrowRight className="ml-2 w-4 h-4" />
               </Button>
-              <Button 
-                variant="outline" 
-                size="lg" 
+              <Button
+                variant="outline"
+                size="lg"
+                onClick={() => document.getElementById("features")?.scrollIntoView({ behavior: 'smooth'})}
                 className="bg-transparent border-white/20 text-white hover:bg-white/10 min-w-[200px] h-12 text-base backdrop-blur-sm"
               >
-                Learn More
+                See How It Works
               </Button>
             </div>
           </motion.div>
@@ -457,13 +458,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Demo Request Form */}
-      <section id="demo-form" className="py-24 bg-background">
+      {/* Pilot Application Form */}
+      <section id="pilot-form" className="py-24 bg-background">
         <div className="container mx-auto px-4 max-w-3xl">
           <Card className="overflow-hidden border-border shadow-xl">
             <div className="bg-primary p-8 text-white text-center">
-              <h2 className="text-3xl font-bold font-display mb-2">See CheckGuard in Action</h2>
-              <p className="text-blue-100">30-minute demo tailored to your bank's workflow.</p>
+              <h2 className="text-3xl font-bold font-display mb-2">Apply for the Pilot Program</h2>
+              <p className="text-blue-100">Limited spots available. Help us build the check review platform community banks deserve.</p>
             </div>
             <CardContent className="p-8 md:p-12 bg-white">
               <Form {...form}>
@@ -567,12 +568,12 @@ export default function Home() {
                     name="painPoint"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Current Pain Point <span className="text-muted-foreground font-normal">(Optional)</span></FormLabel>
+                        <FormLabel>What would you change about check review? <span className="text-muted-foreground font-normal">(Optional)</span></FormLabel>
                         <FormControl>
-                          <Textarea 
-                            placeholder="What's driving you to look at this?" 
+                          <Textarea
+                            placeholder="Your input shapes what we build."
                             className="resize-none"
-                            {...field} 
+                            {...field}
                           />
                         </FormControl>
                         <FormMessage />
@@ -581,10 +582,10 @@ export default function Home() {
                   />
 
                   <Button type="submit" size="lg" className="w-full bg-secondary hover:bg-secondary/90 text-white font-semibold text-lg h-12 shadow-lg hover:shadow-xl transition-all">
-                    Request My Demo
+                    Apply for the Pilot
                   </Button>
                   <p className="text-center text-sm text-muted-foreground mt-4">
-                    No pressure, no 47-email sales sequence.
+                    Pilot partners get direct access to our team and priority feature input.
                   </p>
                 </form>
               </Form>
