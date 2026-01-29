@@ -17,7 +17,12 @@ import {
   Lock,
   Network,
   ScanLine,
-  AlertTriangle
+  AlertTriangle,
+  Zap,
+  MessageSquare,
+  Star,
+  Gift,
+  ChevronDown
 } from "lucide-react";
 import { SEO } from "@/components/seo";
 import { Button } from "@/components/ui/button";
@@ -101,10 +106,57 @@ const painPoints = [
   }
 ];
 
+const pilotBenefits = [
+  {
+    icon: Gift,
+    title: "Free Access",
+    description: "Use CheckGuard at no cost during the pilot period"
+  },
+  {
+    icon: MessageSquare,
+    title: "Direct Line to Founders",
+    description: "Weekly calls and priority support from our team"
+  },
+  {
+    icon: Star,
+    title: "Shape the Roadmap",
+    description: "Your feedback directly influences what we build next"
+  },
+  {
+    icon: Zap,
+    title: "Early Adopter Pricing",
+    description: "Lock in preferred rates when you convert to paid"
+  }
+];
+
+const faqs = [
+  {
+    question: "What's the time commitment?",
+    answer: "We ask for 2-4 hours per week during the pilot—using the software and providing feedback. We handle all the setup and integration work."
+  },
+  {
+    question: "Is the pilot free?",
+    answer: "Yes. Pilot partners use CheckGuard at no cost. We're focused on building the right product, not closing deals."
+  },
+  {
+    question: "How long is the pilot?",
+    answer: "The initial pilot runs 90 days. We'll work together to ensure you're seeing value before discussing next steps."
+  },
+  {
+    question: "What do you need from our IT team?",
+    answer: "Minimal involvement. We support flat file exports, SFTP, and API integrations. Most banks are up and running in under a week."
+  },
+  {
+    question: "Is our data secure?",
+    answer: "Absolutely. We use bank-grade encryption, SOC 2 controls, and multi-tenant isolation. Your data never touches other institutions."
+  }
+];
+
 export default function Home() {
   const { toast } = useToast();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -458,13 +510,50 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Pilot Benefits Section */}
+      <section className="py-20 bg-white border-y border-border/40">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4 font-display">
+              What Pilot Partners Get
+            </h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              We're looking for 5 community banks to shape the future of check review with us.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+            {pilotBenefits.map((benefit, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="text-center p-6"
+              >
+                <div className="w-14 h-14 rounded-full bg-secondary/10 text-secondary flex items-center justify-center mx-auto mb-4">
+                  <benefit.icon className="w-7 h-7" />
+                </div>
+                <h3 className="font-bold text-primary mb-2">{benefit.title}</h3>
+                <p className="text-sm text-muted-foreground">{benefit.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Pilot Application Form */}
       <section id="pilot-form" className="py-24 bg-background">
         <div className="container mx-auto px-4 max-w-3xl">
           <Card className="overflow-hidden border-border shadow-xl">
             <div className="bg-primary p-8 text-white text-center">
+              <div className="inline-flex items-center gap-2 bg-secondary/20 text-secondary-foreground px-3 py-1 rounded-full text-sm font-medium mb-4">
+                <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+                Accepting applications
+              </div>
               <h2 className="text-3xl font-bold font-display mb-2">Apply for the Pilot Program</h2>
-              <p className="text-blue-100">Limited spots available. Help us build the check review platform community banks deserve.</p>
+              <p className="text-blue-100">5 spots available. Help us build the check review platform community banks deserve.</p>
             </div>
             <CardContent className="p-8 md:p-12 bg-white">
               <Form {...form}>
@@ -591,6 +680,55 @@ export default function Home() {
               </Form>
             </CardContent>
           </Card>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-20 bg-white border-t border-border/40">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4 font-display">
+              Common Questions
+            </h2>
+          </div>
+
+          <div className="space-y-4">
+            {faqs.map((faq, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.05 }}
+              >
+                <button
+                  onClick={() => setOpenFaq(openFaq === index ? null : index)}
+                  className="w-full text-left p-5 bg-background rounded-lg border border-border/60 hover:border-secondary/40 transition-colors"
+                >
+                  <div className="flex justify-between items-center">
+                    <h3 className="font-semibold text-primary pr-4">{faq.question}</h3>
+                    <ChevronDown
+                      className={`w-5 h-5 text-muted-foreground transition-transform flex-shrink-0 ${
+                        openFaq === index ? "rotate-180" : ""
+                      }`}
+                    />
+                  </div>
+                  {openFaq === index && (
+                    <p className="mt-3 text-muted-foreground leading-relaxed">
+                      {faq.answer}
+                    </p>
+                  )}
+                </button>
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="text-center mt-10">
+            <p className="text-muted-foreground mb-4">Still have questions?</p>
+            <Button onClick={scrollToPilot} variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white">
+              Apply and We'll Talk
+            </Button>
+          </div>
         </div>
       </section>
 
